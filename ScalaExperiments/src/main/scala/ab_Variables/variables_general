@@ -7,5 +7,5 @@ var a: Double = 2.72	#10
 
 var <identifier>[: <type>] = <data>
 
-
-
+# Avoid using 'var' as it creates side effects #27
+  Functional programming recommends to use 'val'

@@ -1,0 +1,5 @@
+-------------------------------------
+Syntax
+-------------------------
+val <identifier>[: <type>] = <expression>
+var <identifier>[: <type>] = <expression>

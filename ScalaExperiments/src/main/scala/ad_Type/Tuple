@@ -1,0 +1,11 @@
+----------------------------------------------------
+Tuples
+------------
+
+# Is a container for different types of data #25
+# Syntax
+	val info = (5, "Hello", true)
+# Accessing Tuple
+	val name = info._2
+# 2 Sized Tuple(Key/value Pair)
+	val red = "red" -> "0xff0000"

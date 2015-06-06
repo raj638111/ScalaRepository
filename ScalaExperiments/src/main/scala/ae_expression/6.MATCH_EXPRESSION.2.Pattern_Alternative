@@ -1,0 +1,18 @@
+
+
+
+-----------------------
+Syntax
+---------
+case <pattern 1> | <pattern 2> .. => <one or more expressions> #33
+
+-----------------------
+Example	
+---------
+	#33
+	scala> val kind = day match {
+		case "MON" | "TUE" | "WED" | "THU" | "FRI" =>
+		"weekday"
+		case "SAT" | "SUN" =>
+		"weekend"
+	}

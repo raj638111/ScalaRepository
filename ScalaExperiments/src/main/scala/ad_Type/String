@@ -1,0 +1,21 @@
+----------------------------------------------------
+String
+------------
+
+# String Interpolation
+	Example : s"How do you like them ${item}s?" #19
+	
+	Using printf notation : f"Enjoying this $item ${355/113.0}%.5f times today" #19
+
+# Regular Experssion, Capture Groups & more
+	val pattern = """.* apple ([\d.]+) times .*""".r #20
+	val pattern(amountText) = input  
+	
+	# Note : Only for pattern we declare variable(amountText) in a different way
+	# more...#20	 	
+
+# Regex Example
+	val s = "Frank,123 Main,925-555-1943,95122"  	#26.6
+	val p = """.*,(\d{3})-(\d{3})-(\d{4}),.*""".r
+	val p(p1,p2,p3) = s  								# Retrieves Capture Groups
+	val phoneNumber = (p1.toInt, p2.toInt, p3.toInt) 	# Add to Tuple

@@ -1,0 +1,22 @@
+
+-------------------------------------
+Terminology : Expression
+-------------------------
+
+#** Unit of code that always return value #27
+#** Are lines of code normally collected using Curly {} Braces(Expression Blocks) #27 #28
+#** An expression can be a literal, calculation or functional call #28
+# Return value of an expression can be passed to another expression or 
+  stored in value #27
+# Is the Foundation for Functional Programming. Makes it possible to return 
+  data(immutable data) instead of modifying existing data(aka variable) #27
+# 'side effects' : more here #27
+
+
+
+
+-------------------------------------
+Some Examples
+-------------------------
+# 	scala> "hello"  # NOTE : This 'literal' is an expression that returs 'val' res0 #27, #28  
+	res0: String = hello

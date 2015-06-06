@@ -1,0 +1,32 @@
+
+-------------------------------------------
+'if' Expression
+--------------
+
+# Syntax
+	if (<Boolean expression>) <expression> #30
+	
+# Example
+
+	# An Expression		#30
+	scala> if ( 47 % 3 > 0 ) println("Not a multiple of 3")
+	Not a multiple of 3
+	
+	# A Statement with 'if' Expression 	#30
+	scala> val result = if ( false ) "what does this return?"
+	result: Any = () 
+		# NOTE : This is an INTERESTING Example
+		  Compiler used 'inference' to Return the most appropriate type
+
+# NOTE
+	Recommended : Always use 'if' expression in Expression Block {} #31
+-------------------------------------------
+'if else' Expression
+---------------------
+
+# Syntax #31
+	if (<Boolean expression>) <expression>
+	else <expression>
+	
+	
+	
