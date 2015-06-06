@@ -1,0 +1,35 @@
+
+--------------------------------
+Terminology
+-------------
+# Used to match the Type of Input Expression #36
+# Can be used to convert input value of one type to input value of another type
+#** Restriction : Pattern variable should always start with Lower Case letter
+
+--------------------------------
+Syntax
+-------------
+
+case <identifier>: <type> => <one or more expressions> #36
+
+--------------------------------
+Example 
+-------------
+
+	#37
+	scala> val x: Int = 12180
+		x: Int = 12180
+		
+	scala> val y: Any = x
+		y: Any = 12180
+		
+	scala> y match {
+		case x: String => s"'x'"
+		case x: Double => f"$x%.2f"
+		case x: Float => f"$x%.2f"
+		case x: Long => s"${x}l"
+		case x: Int => s"${x}i"
+	}
+
+	res9: String = 12180i
+

@@ -1,0 +1,30 @@
+------------------------
+Terminology
+------------
+
+# Adds if expression to a 'value binding'(Part of WILD_CARD_PATTERN) pattern #36
+# The Pattern will only be matched if the 'if' expression returns 'true'
+
+------------------------
+Syntax
+-------
+
+case <pattern> if <Boolean expression> => <one or more expressions> #36
+
+Note 
+	'if' expression here do not need Parentheses unlike normal 'if/else' expression
+	
+------------------------
+Example
+---------
+	#36
+	scala> val response: String = null
+		response: String = null
+		
+	scala> response match {
+		case s if s != null => println(s"Received '$s'")
+		case s => println("Error! Received a null response")
+	}
+	
+	Error! Received a null response
+	

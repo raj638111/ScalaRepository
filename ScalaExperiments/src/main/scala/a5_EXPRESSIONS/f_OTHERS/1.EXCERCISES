@@ -1,0 +1,21 @@
+
+-----------------------------------------------------
+FOR LOOP
+--------------
+
+	Print the numbers 1 to 100, with each line containing a group of 5 numbers. For example:
+	
+		1, 2, 3, 4, 5,
+		6, 7, 8, 9, 10
+	
+	Two for-loops, one for the rows and one for the columns, can handle this task.
+	
+		scala> for (i <- 1 to 100 by 5) {
+		        for (j <- i to (i + 4)) 
+		        	{ print(s"$j, ") }
+		        println("")
+		      }
+		1, 2, 3, 4, 5,
+		6, 7, 8, 9, 10,
+		11, 12, 13, 14, 15,
+		...

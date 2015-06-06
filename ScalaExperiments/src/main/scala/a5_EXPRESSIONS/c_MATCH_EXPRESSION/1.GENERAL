@@ -1,0 +1,36 @@
+
+---------------------------
+Terminology
+------------
+	# Most Scala developers prefer 'match' Expression over 'if' Experssion #32
+	
+---------------------------
+Syntax
+------------
+	<expression> match {
+		case <pattern match> => <expression>
+		[case...]
+	}
+	
+	#NOTE : Multiple expressions can be used through => but NOT recommended #32
+	
+		  : When *NO* Pattern is matched, we will  #34
+		  	get, 'scala.MatchError'(32 elided... message)
+		  	Use wild-card pattern as final Pattern to avoid this Runtime Error
+		  	
+---------------------------
+Example
+------------
+	scala> val x = 10; val y = 20   #32
+
+	scala> val max = x > y match {
+		case true => x
+	 	case false => y
+	}
+	max: Int = 20
+	
+	
+
+	
+	
+	

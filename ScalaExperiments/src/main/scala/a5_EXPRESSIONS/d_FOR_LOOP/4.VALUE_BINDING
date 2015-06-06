@@ -1,0 +1,23 @@
+----------------------------------------------------------------------
+TERMINOLOGY
+-------------
+
+	# Used to define a value('val') binding in 'for' loop definition #40
+	# Can be used to reduce the complexity & size of expression block in 'for' loop
+
+----------------------------------------------------------------------
+SYNTAX
+-------------
+
+	for (<identifier> <- <iterator>; <identifier> = <expression>) ...  #40
+	
+----------------------------------------------------------------------
+EXAMPLE
+-------------
+
+	#40
+	scala> val powersOf2 = for (i <- 0 to 8; pow = 1 << i) yield pow
+	
+	powersOf2: scala.collection.immutable.IndexedSeq[Int] = Vector(1, 2, 4, 8,
+	16, 32, 64, 128, 256)
+	

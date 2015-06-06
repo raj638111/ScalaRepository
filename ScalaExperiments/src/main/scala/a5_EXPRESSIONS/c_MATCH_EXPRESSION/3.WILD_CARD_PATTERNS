@@ -1,0 +1,49 @@
+
+*************************************************************************************************
+Pattern matching with Value/Variable Binding Pattern
+*************************************************************************************************
+
+----------------------------
+Syntax
+--------
+	case <identifier> => <one or more expressions>  #34
+
+----------------------------
+Example
+---------
+	#34
+	scala> val status = message match {
+			case "Ok" => 200
+			case other => {
+				println(s"Couldn't parse $other") #INTERESTING
+				-1
+		}
+		
+		NOTE : 	Here 'other' is the name of a 'val' which will match the input value 
+				of the expression(in our case 'message')
+		
+	
+*************************************************************************************************
+Pattern Matching with Wild card Operator Pattern(_)
+*************************************************************************************************
+
+----------------------------
+Syntax 
+--------
+	case _ => <one or more expressions>   #35
+	Note : Use of wildcard _ comes from field of mathematics #35
+
+----------------------------
+Example
+---------
+	#35
+	scala> val status = message match {
+		case "Ok" => 200
+		case _ => {
+			println(s"Couldn't parse $message")
+			-1
+		}
+	}
+
+
+	

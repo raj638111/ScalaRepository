@@ -1,0 +1,7 @@
+
+What is the use of 'by' keyword #43 #Question 4 : Gib Hub
+
+scala> for (i <- 1 to 100 by 5) {
+     |   for (j <- i to (i + 4)) { print(s"$j, ") }
+     |   println("")
+     | }
