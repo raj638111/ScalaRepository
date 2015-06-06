@@ -13,3 +13,30 @@ Byte, Short, Int, Long, Float & Double #14
 				
 # Literal type notation
 	0x0f, 5l : Check table here for all #17
+	
+----------------------------------------------------
+Strings
+------------
+
+# String Interpolation
+	Example : s"How do you like them ${item}s?" #19
+	
+	Using printf notation : f"Enjoying this $item ${355/113.0}%.5f times today" #19
+
+# Regular Experssion, Capture Groups & more
+	val pattern = """.* apple ([\d.]+) times .*""".r #20
+	more...#20	 	
+
+----------------------------------------------------
+Other Types
+------------
+# Any, AnyVal, AnyRef (Root Types) #22
+	# Nothing, Null
+	# Unit : Denotes lack of data(Similar to void) #23
+		# Example : val nada = () #23
+	# & more #22	
+
+
+
+
+	
