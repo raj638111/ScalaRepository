@@ -1,0 +1,15 @@
+
+----------------------------------------------------
+Numeric types 
+(sorted on Conversion rank)
+-----------------------------
+
+Byte, Short, Int, Long, Float & Double #14
+
+# toType method
+	Can be used to make explicit conversion from low Rank to High Rank Type #16
+	Example :	val l: Long = 20		#16
+				val i: Int = l.toInt
+				
+# Literal type notation
+	0x0f, 5l : Check table here for all #17

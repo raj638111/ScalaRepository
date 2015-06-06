@@ -1,0 +1,8 @@
+Load Scala Code from File in REPL 
+	:load <file>	#7
+
+Paste a code in REPL
+	:paste	#7
+	:past -raw  #7 : Works only with Scala Class or Equivalent
+
+	

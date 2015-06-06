@@ -1,0 +1,11 @@
+
+---------------------------------
+Variable Syntax
+----------------
+var <name>: <type> = <literal> #10
+var a: Double = 2.72	#10
+
+var <identifier>[: <type>] = <data>
+
+
+

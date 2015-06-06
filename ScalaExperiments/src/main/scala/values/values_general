@@ -1,0 +1,21 @@
+
+----------------------------------------
+Syntax
+----------
+val <name>: <type> = <literal> #9
+val x: Int = 5  //#9
+
+val <identifier>[: <type>] = <data> #10
+	#	If type is not specified, Scala compiler will infer based on the data #10
+		This is called as 'Type inference' #10
+		In case where readability is needed, use Explicit type #11
+	#  	val(instead of var) improves readability of code #11
+	
+
+----------------------------------------
+Naming
+----------
+Example
+	val `a.b` = 10	#14
+	val $ = "USD Currency Symbol" #14
+		
