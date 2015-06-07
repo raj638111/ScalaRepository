@@ -1,0 +1,10 @@
+-----------------------------------------------------
+EXPLANATION
+-----------------------------------------------------
+
+	Scala supports,			#65
+		First Class Functions	: 	Functions is treated like data(that they 
+									can be assigned to a 'val' etc...)  #65, #68
+		Higher Order Functions
+		Declarative Programming
+		

@@ -1,0 +1,21 @@
+-----------------------------------------------------
+Explanation
+-----------------------------------------------------
+
+	# Is a Function with Function Type as Parameter or Return value #68
+	
+-----------------------------------------------------
+EXAMPLE
+-----------------------------------------------------
+	
+	# Define Higher Order Function #68	
+	def safeStringOp(s: String, f: String => String) = {
+	if (s != null) f(s) else s
+	}
+	...
+	
+	def reverser(s: String) = s.reverse
+	...
+	
+	# Invoke a Function from Higher order function
+	safeStringOp(null, reverser)
