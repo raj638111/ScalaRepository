@@ -1,0 +1,48 @@
+-----------------------------------------------------
+EXPLANATION
+-----------------------------------------------------
+
+	# Method
+		# A function in a Class is called Method #57
+		
+	# Method Invocation
+		
+		Two types of invocation is possible 
+		1. 'Infix dot Notation' #58
+		2. 'Infix Operation Notation'
+			
+-----------------------------------------------------
+INFIX DOT NOTATION
+-----------------------------------------------------
+			
+	# Syntax	
+	
+		<class instance>.<method>[(<parameters>)]  #58
+	
+	# Example 
+		#58
+		scala> val s = "vacation.jpg"
+		s: String = vacation.jpg
+		
+		scala> val isJPEG = s.endsWith(".jpg")	
+
+-----------------------------------------------------
+INFIX OPERATOR NOTATION
+-----------------------------------------------------
+			
+	# Syntax	
+	
+		<object> <method> <parameter>   #59
+		
+	# Example (Single Parameter Method)
+	 
+		#59
+		scala> d compare 18.0
+		res17: Int = 1
+		
+		scala> d + 2.721
+		res18: Double = 68.363		
+		
+	# Example (Multi Parameter Method) 
+	
+		# Check example here ...#60
