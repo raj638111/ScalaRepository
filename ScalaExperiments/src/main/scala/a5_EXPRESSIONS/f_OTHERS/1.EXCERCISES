@@ -2,7 +2,10 @@
 -----------------------------------------------------
 FOR LOOP
 --------------
-
+	
+	#43 #Question 4 #GitHub
+	--------------------------
+	
 	Print the numbers 1 to 100, with each line containing a group of 5 numbers. For example:
 	
 		1, 2, 3, 4, 5,
@@ -19,3 +22,29 @@ FOR LOOP
 		6, 7, 8, 9, 10,
 		11, 12, 13, 14, 15,
 		...
+		
+	#43 #Question 5 #GitHub(Typesafe Question)
+	------------------------------------------
+	
+	There is a popular coding interview question I’ll call "typesafe", in which the 
+	numbers 1 - 100 must be printed one per line. The catch is that multiples of 3 
+	must replace the number with the word "type", while multiples of 5 must replace 
+	the number with the word "safe". Of course, multiples of 15 must print "typesafe".
+	
+	scala> for (i <- 1 to 100) {
+		     i match {
+			     case x if x % 15 == 0 => println("typesafe")
+			     case x if x % 5 == 0 => println("safe")
+			     case x if x % 3 == 0 => println("type")
+			     case x => println(x)
+     		}
+     	}
+     	
+     #43 #Question 6 #GitHub(Typesafe Question)
+	------------------------------------------
+			
+    Same as Question 5 but answer should be single line
+    scala> for (i <- 1 to 100) { 
+    			var s = ""; if (i%3==0) s="type"; 
+    			if (i%5==0) s+="safe"; if(s.isEmpty) s += i; println(s) 
+    		}

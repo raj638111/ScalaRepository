@@ -1,0 +1,20 @@
+-----------------------------------------------------
+EXPLANATION
+-----------------------------------------------------
+
+	# Parameters in Function can be grouped using Multiple Parentheses #55
+	#** Used mainly with 'Function literals'
+
+-----------------------------------------------------
+EXAMPLE
+-----------------------------------------------------
+
+	#55
+	
+	# Definition
+	scala> def max(x: Int)(y: Int) = if (x > y) x else y
+	max: (x: Int)(y: Int)Int
+	
+	# Invocation
+	scala> val larger = max(20)(39)
+	larger: Int = 39

@@ -1,0 +1,20 @@
+-----------------------------------------------------
+SYNTAX
+-----------------------------------------------------
+	
+	def <identifier>(<identifier>: <type> = <value>): <type> #53
+	
+-----------------------------------------------------
+EXAMPLE
+-----------------------------------------------------
+
+	#54
+	# Function Definition
+	scala> def greet(name: String, prefix: String = "") = s"$prefix$name"
+	greet: (name: String, prefix: String)String
+	
+	# Call without Default value
+	scala> val greeting2 = greet("Ola")
+	greeting2: String = Ola
+
+

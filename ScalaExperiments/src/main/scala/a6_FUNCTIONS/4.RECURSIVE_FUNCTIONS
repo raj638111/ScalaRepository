@@ -1,0 +1,24 @@
+-----------------------------------------------------
+TERMINOLOGY
+-----------------------------------------------------
+
+	# Stack can be optimized with 'tail-recursion' #50
+	# Use function annotation to force the compiler for 'tail-recursion' check
+		# Annotation = @annotation.tailrec
+	#** Is Widely used to avoid Mutable Data	
+
+-----------------------------------------------------
+EXAMPLE
+-----------------------------------------------------
+	
+	#51
+	scala> @annotation.tailrec
+			def power(x: Int, n: Int): Long = {
+				if (n >= 1) x * power(x, n-1)
+				else 1
+			}
+			
+			
+	<console>:9: error: could not optimize @tailrec annotated method power:
+	it contains a recursive call not in tail position
+	if (n >= 1) x * power(x, n-1)

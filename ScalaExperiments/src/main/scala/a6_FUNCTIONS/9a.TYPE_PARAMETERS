@@ -1,0 +1,32 @@
+-----------------------------------------------------
+EXPLANATION
+-----------------------------------------------------
+
+	# Is used to assign Type for Value Parameters & Return value #55
+
+-----------------------------------------------------
+SYNTAX
+-----------------------------------------------------
+
+	def <function-name>[type-name](<parameter-name>: <type-name>): <type-name>... #55
+	
+-----------------------------------------------------
+EXAMPLE
+-----------------------------------------------------
+
+	#56
+	
+	# Function Definition	
+	scala> 	def identity[A](a: A): A = a
+	identity: [A](a: A)A
+	
+	# With String
+	scala> val s: String = identity[String]("Hello")
+	s: String = Hello
+	
+	# With Double
+	scala> val d = identity(2.717)
+	d: Double = 2.717
+	
+	#Recommended
+		Always specify the Assigned value type for Readability #57

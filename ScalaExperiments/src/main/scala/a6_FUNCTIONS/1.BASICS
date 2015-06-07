@@ -1,0 +1,47 @@
+-----------------------------------------------------
+EXPLANATION
+-----------------------------------------------------
+
+	# Functions are, NAMED, REUSABLE expressions #45
+	# PURE FUNCTION,
+		# Has 1 or more Input parameters
+		# Performs calculation only using Input Parameters
+		# Returns a Value
+		# Is equivalent to Functions in Mathematics
+		# more...#46
+	# SIDE EFFECTS
+		# A function is said to have Side Effects if it modifies data outside its Scope #49	
+		
+-----------------------------------------------------
+SYNTAX : INPUT-LESS FUNCTION
+-----------------------------------------------------
+
+	# def <identifier> = <expression>
+	
+	# Example
+		def fn = "Hello" 
+	# NOTE : Return value(as with all expressions) is present and have implicit type #46
+	
+-----------------------------------------------------
+SYNTAX : FUNCTION WITH RETURN TYPE
+-----------------------------------------------------
+	# def <identifier>: <type> = <expression>
+	
+	# Example
+		def fn: String = "Hello"
+	
+-----------------------------------------------------
+SYNTAX : FULL FUNCTION
+-----------------------------------------------------
+
+	def <identifier>(<identifier>: <type>[, ... ]): <type> = <expression> #47
+	
+	Example(with 'return' keyword) #47
+	------------------------------------
+	
+	def safeTrim(s: String): String = {
+				if (s == null) return null
+				s.trim()
+			}
+	
+	

@@ -1,0 +1,19 @@
+-----------------------------------------------------
+TERMINOLOGY
+-----------------------------------------------------
+
+	# Is a function that does NOT return a value 	#48
+	  ie... Any function that ends with a STATEMENT
+	  
+	# Return type is inferred to be 'Unit' by the Compiler
+	  
+	# NOTE : Check old deprecated syntax 			#48
+	
+-----------------------------------------------------
+EXAMPLE
+-----------------------------------------------------
+
+	scala> def log(d: Double) = println(f"Got value $d%.2f")
+	log: (d: Double)Unit
+	
+	
