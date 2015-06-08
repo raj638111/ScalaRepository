@@ -1,5 +1,50 @@
------------------------------------------------------
 Explanation
 -----------------------------------------------------
 
+	# Is a function that lacks a Name(aka Anonymous Functions, Lambdas etc...)
 	# Is an alternative to Higher Order functions #69
+	# Can be expressed in any place that accepts Function Type #69
+	
+	#** Scala compiler term for Function Literal is : 'function1', 'function2', etc...
+		based on the number of arguments
+
+Syntax
+-----------------------------------------------------
+	
+	([<identifier>: <type>, ... ]) => <expression>  #70
+	
+
+Example 1 (Basic)
+-----------------------------------------------------
+
+	#69
+	#Assign Function literal to a 'val'
+	scala> val doubler = (x: Int) => x * 2
+	doubler: Int => Int = <function1>
+
+	#Call function using 'val'
+	scala> val doubled = doubler(22)
+	doubled: Int = 44
+
+Example 2 (Basic)		
+-----------------------------------------------------
+
+	scala> val statusHandler: Int => String = {  //77
+				case 200 => "Okay"
+			}
+	
+Example 3 (Inside Higher order function invocation)
+-----------------------------------------------------
+	#71
+	scala> def safeStringOp(s: String, f: String => String) = {
+	if (s != null) f(s) else s
+	}
+	safeStringOp: (s: String, f: String => String)String
+
+	#Way 1
+	scala> safeStringOp("Ready", (s: String) => s.reverse)
+	res8: String = ydaeR
+	
+	#Way 2
+	scala> safeStringOp("Ready", s => s.reverse)
+	res10: String = ydaeR

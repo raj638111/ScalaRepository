@@ -1,0 +1,17 @@
+Explanation
+-----------------------------------------------------
+
+	# Are 'Function Literals' that limit their possible input using 'case' patterns #77
+
+Example
+-----------------------------------------------------
+
+	scala> val statusHandler: Int => String = { //77
+		case 200 => "Okay"
+		case 500 => "Our error"
+	}
+
+	scala> statusHandler(401)
+	scala.MatchError: 401 (of class java.lang.Integer)
+	at $
+	

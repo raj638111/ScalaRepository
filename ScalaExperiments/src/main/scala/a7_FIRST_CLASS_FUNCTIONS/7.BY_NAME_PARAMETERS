@@ -1,0 +1,40 @@
+-----------------------------------------------------
+Explanation
+-----------------------------------------------------
+
+	# 	With a By-Name Parameter, we can either pass value (or) functions vis-a-vis a higher 
+	 	order function where we can only pass function value #75
+	 	
+-----------------------------------------------------
+Syntax
+-----------------------------------------------------
+
+	<identifier>: => <type>   #75
+	
+	def doubles(x: => Int) = {
+		println("Now doubling " + x)
+		x * 2
+	}
+
+-----------------------------------------------------
+Example
+-----------------------------------------------------
+	# Function with By-Name Parmeter #76
+	
+		scala> def doubles(x: => Int) = {
+		println("Now doubling " + x)
+		x * 2
+		}
+		doubles: (x: => Int)Int
+
+	# ----
+	
+		scala> def f(i: Int) = { println(s"Hello from f($i)"); i }
+		f: (i: Int)Int
+
+	# Invocation
+	
+		scala> doubles( f(8) )
+		Hello from f(8)
+		Now doubling 8
+		Hello from f(8)

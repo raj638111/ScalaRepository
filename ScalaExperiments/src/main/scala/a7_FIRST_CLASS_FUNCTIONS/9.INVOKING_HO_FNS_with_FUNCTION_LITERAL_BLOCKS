@@ -1,0 +1,62 @@
+EXPLANATION
+------------------------------------------------------------------------
+
+	# 	This is a trick to use Function Literal BLOCKS(Braces) instead of 
+		Function Literals(Parentheses) in Higher Order Functions
+	# 	Done using Parameter Groups
+	#** This way of defining function has many benefits #80
+
+EXAMPLE : The Braces way(With Function Literals)
+------------------------------------------------------------------------
+
+	scala> def safeStringOp(s: String, f: String => String) = {
+			if (s != null) f(s) else s
+			}
+			safeStringOp: (s: String, f: String => String)String
+
+	scala> val uuid = java.util.UUID.randomUUID.toString
+			uuid: String = bfe1ddda-92f6-4c7a-8bfc-f946bdac7bc9
+
+	//Invocation with Function Literal
+	scala> val timedUUID = safeStringOp(uuid, { s =>
+			val now = System.currentTimeMillis
+			val timed = s.take(24) + now
+			timed.toUpperCase
+			})
+			timedUUID: String = BFE1DDDA-92F6-4C7A-8BFC-1394546043987
+
+EXAMPLE : The Function literal blocks way(using Parameter Groups)
+------------------------------------------------------------------------
+
+	//Function Definitin using Paramter Groups
+	scala> def safeStringOp(s: String)(f: String => String) = {
+			if (s != null) f(s) else s
+			}
+			safeStringOp: (s: String)(f: String => String)String
+			
+	//Invocation with Function Literal Block		
+	scala> val timedUUID = safeStringOp(uuid) { s =>
+			val now = System.currentTimeMillis
+			val timed = s.take(24) + now
+			timed.toUpperCase
+			}
+			timedUUID: String = BFE1DDDA-92F6-4C7A-8BFC-1394546915011
+	
+EXAMPLE : 	The Function literal blocks way(using By-Name Parameter) + made Generic
+			(Using Type Parameter)
+------------------------------------------------------------------------
+	scala> def timer[A](f: => A): A = {
+		def now = System.currentTimeMillis
+		val start = now; val a = f; val end = now
+		println(s"Executed in ${end - start} ms")
+		a
+		}
+		timer: [A](f: => A)A
+
+	scala> val veryRandomAmount = timer {
+		util.Random.setSeed(System.currentTimeMillis)
+		for (i <- 1 to 100000) util.Random.nextDouble
+		util.Random.nextDouble
+		}
+		Executed in 13 ms
+		veryRandomAmount: Double = 0.5070558765221892	 

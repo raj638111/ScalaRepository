@@ -1,0 +1,46 @@
+-----------------------------------------------------
+Explanation
+-----------------------------------------------------
+	
+	# Partially Applied Function
+		Is a way to create shortcut cut to a function, avoiding providing parameters 
+		to the Function #74
+	# Currying
+		**Is a way to create Partially Applied function using Function with
+		multiple Parameter list #74 
+
+-----------------------------------------------------
+Example : Shortcut to a function 
+-----------------------------------------------------
+	#74
+	scala> def factorOf(x: Int, y: Int) = y % x == 0
+	factorOf: (x: Int, y: Int)Boolean
+	
+	scala> val f = factorOf _
+	f: (Int, Int) => Boolean = <function2>
+	
+	scala> val x = f(7, 20)
+	x: Boolean = false
+
+-----------------------------------------------------
+Example : Partially Applied Function
+-----------------------------------------------------
+
+	scala> val multipleOf3 = factorOf(3, _: Int) # Partially Applied Function
+	multipleOf3: Int => Boolean = <function1>
+	
+	scala> val y = multipleOf3(78)
+	y: Boolean = true
+
+-----------------------------------------------------
+Example : Partially Applied Function using Currying
+-----------------------------------------------------
+
+	scala> def factorOf(x: Int)(y: Int) = y % x == 0  # Function with Multiple Parameter list
+	factorOf: (x: Int)(y: Int)Boolean
+	
+	scala> val isEven = factorOf(2) _		# Partially Applied function using Currying
+	isEven: Int => Boolean = <function1>
+	
+	scala> val z = isEven(32
+	

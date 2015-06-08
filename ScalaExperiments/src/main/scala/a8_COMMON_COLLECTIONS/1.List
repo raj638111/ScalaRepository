@@ -1,0 +1,66 @@
+ADDITIONAL INFO
+------------------------------------------------------------------------
+	# List is Immutable
+	# A list ends with 'Nil' as terminus #88
+	
+METHODS
+------------------------------------------------------------------------
+	# size, isEmpty, head, tail, (0)  #83
+	
+	#NOTE 
+		#BEWARE : size() method need travel to end of list each time to get the Size 
+
+HIGHER ORDER FUNCTIONS
+------------------------------------------------------------------------
+	# foreach(), map(), reduce() #85
+	 
+EXAMPLE : Basic
+------------------------------------------------------------------------
+
+	scala> val numbers = List(32, 95, 24, 21, 17)	//83
+			numbers: List[Int] = List(32, 95, 24, 21, 17)
+			
+EXAMPLE : Iterating
+------------------------------------------------------------------------
+
+	scala> val numbers = List(32, 95, 24, 21, 17)  //84
+		numbers: List[Int] = List(32, 95, 24, 21, 17)
+		
+	scala> var total = 0; for (i <- numbers) { total += i }
+		total: Int = 189	
+
+EXAMPLE : Decomposing List: head() & tail()
+------------------------------------------------------------------------
+	#87
+	scala> val primes = List(2, 3, 5, 7, 11, 13)
+		primes: List[Int] = List(2, 3, 5, 7, 11, 13)
+		
+	scala> var i = primes
+		i: List[Int] = List(2, 3, 5, 7, 11, 13)
+		
+	scala> while(! i.isEmpty) { print(i.head + ", "); i = i.tail }
+		2, 3, 5, 7, 11, 13,
+
+EXAMPLE : Using tuples
+------------------------------------------------------------------------
+
+	#87
+	scala> val keyValues = List(('A', 65), ('B',66), ('C',67))
+		keyValues: List[(Char, Int)] = List((A,65), (B,66), (C,67))
+		
+EXAMPLE : Checking End of List using 'Nil'
+------------------------------------------------------------------------
+
+	#88
+	scala> val primes = List(2, 3, 5, 7, 11, 13)
+		primes: List[Int] = List(2, 3, 5, 7, 11, 13)
+		
+	scala> var i = primes
+		i: List[Int] = List(2, 3, 5, 7, 11, 13)
+		
+	scala> while(i != Nil) { print(i.head + ", "); i = i.tail }
+
+
+
+
+		

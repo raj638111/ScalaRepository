@@ -1,0 +1,13 @@
+EXPLANATION
+------------------------------------------------------------------------
+
+	# Is Immutable and Unordered collection of UNIQUE Elements #85
+	
+EXAMPLE
+------------------------------------------------------------------------
+
+	scala> val unique = Set(10, 20, 30, 20, 20, 10)
+		unique: scala.collection.immutable.Set[Int] = Set(10, 20, 30)
+		
+	scala> val sum = unique.reduce( (a: Int, b: Int) => a + b )
+		sum: Int = 60

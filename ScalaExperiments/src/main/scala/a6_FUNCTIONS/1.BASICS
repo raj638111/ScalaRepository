@@ -1,5 +1,4 @@
------------------------------------------------------
-EXPLANATION
+Explanation
 -----------------------------------------------------
 
 	# Functions are, NAMED, REUSABLE expressions #45
@@ -12,26 +11,23 @@ EXPLANATION
 	# SIDE EFFECTS
 		# A function is said to have Side Effects if it modifies data outside its Scope #49	
 		
------------------------------------------------------
-SYNTAX : INPUT-LESS FUNCTION
+Syntax : Input-less Function
 -----------------------------------------------------
 
-	# def <identifier> = <expression>
+	# def <identifier> = <expression> //46
 	
 	# Example
 		def fn = "Hello" 
 	# NOTE : Return value(as with all expressions) is present and have implicit type #46
 	
------------------------------------------------------
-SYNTAX : FUNCTION WITH RETURN TYPE
+Syntax : Function with Return Type
 -----------------------------------------------------
 	# def <identifier>: <type> = <expression>
 	
 	# Example
 		def fn: String = "Hello"
 	
------------------------------------------------------
-SYNTAX : FULL FUNCTION
+Syntax : Full Function
 -----------------------------------------------------
 
 	def <identifier>(<identifier>: <type>[, ... ]): <type> = <expression> #47

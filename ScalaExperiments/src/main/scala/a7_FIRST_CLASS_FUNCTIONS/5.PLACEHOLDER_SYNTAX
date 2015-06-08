@@ -1,0 +1,42 @@
+-----------------------------------------------------
+Explanation
+-----------------------------------------------------
+
+	# Is a Shortened form of Function literals #72
+	# Done using Wildcard operator(_)
+	#** In order to apply Placeholder syntax, following condition need to be met
+		# Explicit Type of function is specified outside the literal
+		# Parameters are used no more than Once
+	# Used widely in Scala
+		
+-----------------------------------------------------
+Example : Basic 
+-----------------------------------------------------
+
+	Example 1 #72
+	---------------
+	scala> val doubler: Int => Int = _ * 2  # As can be seen, here 
+											# Type is outside the literal(before '=') 
+	doubler: Int => Int = <function1>
+
+	Example 2(Used in Higher order function)#73 
+	--------------------------------------------
+		
+	scala> def combination(x: Int, y: Int, f: (Int,Int) => Int) = f(x,y)
+	combination: (x: Int, y: Int, f: (Int, Int) => Int)Int
+	
+	scala> combination(23, 12, _ * _)
+	res13: Int = 276
+	
+-----------------------------------------------------
+Example : Using Type Parameters #73 
+-----------------------------------------------------
+	
+	scala> def tripleOp[A,B](a: A, b: A, c: A, f: (A, A, A) => B) = f(a,b,c)
+	tripleOp: [A, B](a: A, b: A, c: A, f: (A, A, A) => B)B
+	
+	scala> tripleOp[Int,Int](23, 92, 14, _ * _ + _)
+	res15: Int = 2130
+	
+	scala> tripleOp[Int,Double](23, 92, 14, 1.0 * _ / _ / _)
+	res16: Double = 0.017857142857142856

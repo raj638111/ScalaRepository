@@ -1,19 +1,16 @@
------------------------------------------------------
-Explanation
------------------------------------------------------
-
+EXPLANATION
+-------------------------------------------------------------------
+	# When we define a Function, we are defining Function of a Particular Type
 	# Function value can be assigned Function of a Type
 	# Function Type
 		Is based on Input arguments & their Return value #66
 		
------------------------------------------------------------
 SYNTAX : Defining Type without Wildcard operator(Explicit)
------------------------------------------------------------
+-------------------------------------------------------------------
 	([<type>, ...]) => <type>  #66
 	
--------------------------------------------------------------
 EXAMPLE : Function Type definition without Wildcard operator
---------------------------------------------------------------
+-------------------------------------------------------------------
 	#67	
 	scala> def double(x: Int): Int = x * 2
 	double: (x: Int)Int
@@ -25,15 +22,13 @@ EXAMPLE : Function Type definition without Wildcard operator
 	scala> val myDouble: (Int) => Int = double 	//***Type needed to differentiate 
 												//from function Invocation #67
 	
----------------------------------------------------------------	
 SYNTAX : Defining Type WITH Wildcard operator
----------------------------------------------------------------
+-------------------------------------------------------------------
 
 	val <identifier> = <function name> _  #67
 	
--------------------------------------------------------------
 EXAMPLE : Function Type definition WITH Wildcard operator
---------------------------------------------------------------
+-------------------------------------------------------------------
 	#67	
 	scala> def double(x: Int): Int = x * 2
 	double: (x: Int)Int

@@ -1,0 +1,27 @@
+EXPLANATION 
+------------------------------------------------------------------------
+	# Is an Immutable Key-Value store #85
+	
+EXAMPLE 
+------------------------------------------------------------------------
+
+	#86 (We are using tuples here)
+	
+	scala> val colorMap = Map("red" -> 0xFF0000, "green" -> 0xFF00,
+		"blue" -> 0xFF)
+		colorMap: scala.collection.immutable.Map[String,Int] =
+		Map(red -> 16711680, green -> 65280, blue -> 255)
+		
+	scala> val redRGB = colorMap("red")
+		redRGB: Int = 16711680
+		
+	scala> val cyanRGB = colorMap("green") | colorMap("blue")
+		cyanRGB: Int = 65535
+		
+	scala> val hasWhite = colorMap.contains("white")
+		hasWhite: Boolean = false
+		
+	scala> for (pairs <- colorMap) { println(pairs) }
+		(red,16711680)
+		(green,65280)
+		(blue,255)

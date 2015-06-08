@@ -1,5 +1,8 @@
 
+EXPLANATION
 -----------------------------------------------------
+	# 	Is a way to compute Input Parameter before Passing it to a Function
+
 EXAMPLE
 -----------------------------------------------------
 	#50

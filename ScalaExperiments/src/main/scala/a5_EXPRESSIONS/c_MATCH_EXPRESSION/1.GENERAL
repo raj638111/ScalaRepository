@@ -1,12 +1,11 @@
-
+Explanation
 ---------------------------
-Terminology
-------------
 	# Most Scala developers prefer 'match' Expression over 'if' Experssion #32
-	
----------------------------
+	# 'MatchError'(runtime) will result if no Matching is found #77
+
 Syntax
-------------
+---------------------------
+
 	<expression> match {
 		case <pattern match> => <expression>
 		[case...]
@@ -18,9 +17,9 @@ Syntax
 		  	get, 'scala.MatchError'(32 elided... message)
 		  	Use wild-card pattern as final Pattern to avoid this Runtime Error
 		  	
----------------------------
 Example
-------------
+---------------------------
+
 	scala> val x = 10; val y = 20   #32
 
 	scala> val max = x > y match {
