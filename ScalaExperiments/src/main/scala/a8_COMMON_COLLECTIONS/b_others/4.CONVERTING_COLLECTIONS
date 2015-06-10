@@ -1,0 +1,11 @@
+CONVERTING COLLECTIONS
+------------------------------------------------------------------------
+
+	# One Collection Type can be converted to the other #98
+	# Check table here for methods...#99
+	
+JAVA AND SCALA COLLECTION COMPATABILITY
+------------------------------------------------------------------------
+
+	#** Done using : import collection.JavaConverters._		#100
+		Methods :asJava(), asScala() 

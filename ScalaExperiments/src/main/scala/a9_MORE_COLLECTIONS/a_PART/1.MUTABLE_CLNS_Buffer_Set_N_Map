@@ -1,0 +1,34 @@
+GENERAL
+------------------------------------------------------------------------
+
+	collection.mutable.Buffer  	(-> List)
+	collection.mutable.Set		(-> Set)
+	collection.mutable.Map		(-> Map)
+	
+	* Always use with Package Name or else #108
+	
+	* Mutable collection can be converted to Immutes using the methods toBuffer() etc...#109
+
+COLLECTION BUILDER
+------------------------------------------------------------------------
+
+	Is a good choice if we are creating mutable collections iteratively to convert 
+	them to Immutable #111
+	
+	Example
+	-----------
+	
+	scala> val b = Set.newBuilder[Char] //We are using an Immutable(Set) here
+		b: scala.collection.mutable.Builder[Char,scala.collection.immutable.
+		Set[Char]] = scala.collection.mutable.SetBuilder@726dcf2c
+	
+	scala> b += 'h'
+		res3: b.type = scala.collection.mutable.SetBuilder@d13d812
+		
+	scala> b ++= List('e', 'l', 'l', 'o')
+		res4: b.type = scala.collection.mutable.SetBuilder@d13d812
+		
+	scala> val helloSet = b.result
+		helloSet: scala.collection.immutable.Set[Char] = Set(h, e, l, o)
+		
+		*** Note here...the underlying type is Immutable

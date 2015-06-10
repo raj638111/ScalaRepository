@@ -1,0 +1,38 @@
+Explanation
+-----------------------------------------------------------------------
+
+	# 'Util.Try' can be used instead of regular 'Try Catch'
+	
+	# Type & Sub Type
+		# Util.Try
+			- Success
+			- Failure
+		
+	# Methods in 'Util.Try'
+		# Check Table here...#124
+	
+Example
+-----------------------------------------------------------------------
+
+	#122
+	def loopAndFail(end: Int, failAt: Int): Int = {
+		for (i <- 1 to end) {
+		println(s"$i) ")
+		if (i == failAt) throw new Exception("Too many iterations")
+		}
+		end
+		}
+		loopAndFail: (end: Int, failAt: Int)Int
+	
+	//Good Input
+	scala> val t1 = util.Try( loopAndFail(2, 3) )
+		1)
+		2)
+		t1: scala.util.Try[Int] = Success(2)
+
+	//Bad Input
+	scala> val t2 = util.Try{ loopAndFail(4, 2) }
+		1)
+		2)
+		t2: scala.util.Try[Int] = Failure(
+		java.lang.Exception: Too many iterations)	

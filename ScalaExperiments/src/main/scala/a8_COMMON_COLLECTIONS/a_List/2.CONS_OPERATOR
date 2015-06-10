@@ -1,0 +1,21 @@
+EXPLANATION
+------------------------------------------------------------------------
+
+	# 'Cons' operator(::) is another way to Construct list taking advantage of 'Nil' #89
+	#** Existing list can be reused
+	# 'Right associative notation' is used
+	
+EXAMPLE
+------------------------------------------------------------------------
+	#90
+	scala> val first = Nil.::(1)
+		first: List[Int] = List(1)
+		
+	scala> first.tail == Nil
+		res3: Boolean = true
+	
+	scala> val second = 2 :: first
+		second: List[Int] = List(2, 1)
+		
+	scala> second.tail == first
+		res4: Boolean = true

@@ -1,0 +1,28 @@
+Explanation
+-----------------------------------------------------------------------
+
+	# 	'Future' collection is the recommended way 
+		Threads can be created & managed in Scala #125
+		
+	# 	Asynchronous Operations in 'Future'
+		- onSuccess() #128
+		- onFailure() #128
+		- Check the table for all Asynchronous Operations #127	
+	
+	# 	Synchronous handling in 'Future'
+		- Use 'concurrent.Await.result' #129
+
+Example (Basic)
+-----------------------------------------------------------------------
+
+	scala> import concurrent.ExecutionContext.Implicits.global 	//Context is required to run
+																//Threads #125
+																
+	scala> val f = concurrent.Future { Thread.sleep(5000); println("hi") }
+		f: scala.concurrent.Future[Unit] =
+		scala.concurrent.impl.Promise$DefaultPromise@4aa3d36
+		
+	scala> println("waiting")
+		waiting
+		
+	scala> hi

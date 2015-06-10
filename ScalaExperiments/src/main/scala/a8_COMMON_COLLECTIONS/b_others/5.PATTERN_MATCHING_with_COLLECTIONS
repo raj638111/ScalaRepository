@@ -1,0 +1,46 @@
+EXAMPLE
+------------------------------------------------------------------------
+#100
+	scala> val msg = statuses.head match {
+		case x if x < 500 => "okay"
+		case _ => "whoah, an error"
+		}
+		msg: String = whoah, an error
+#-
+	scala> val msg = statuses match {
+		case x if x contains(500) => "has error"
+		case _ => "okay"
+		}
+		msg: String = has error
+
+# Using value binding
+
+	scala> val msg = statuses match {
+		case List(500, x) => s"Error followed by $x"
+		case List(e, x) => s"$e was followed by $x"
+		}
+		msg: String = Error followed by 404
+
+# Decomposing & matching list #101
+
+	scala> val head = List('r','g','b') match {
+		case x :: xs => x
+		case Nil => ' '
+		}
+		head: Char = r
+
+# Pattern Matching a Tuple  #101
+	scala> val code = ('h', 204, true) match {
+		case (_, _, false) => 501
+		case ('c', _, true) => 302
+		case ('h', x, true) => x
+		case (c, x, true) => {
+		println(s"Did not expect code $c")
+		x
+		}
+		}
+		code: Int = 204
+		
+		
+NOTE : **Scala Collections are 'Monadic' #102
+			ie the ability to chain Operations in a Type-Safe Manner 

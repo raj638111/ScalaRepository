@@ -1,0 +1,48 @@
+Explanation
+-----------------------------------------------------------------------
+
+	# Represents the Presence or Absence of Single Value #117
+	
+	#** Can be used as a replacement for 'null' values
+	#** Safer way to build chain of operations
+	
+	Type & Sub Type
+	------------------
+	
+		'Option'  
+				'Some'	- Represents availability of value 	#117
+				'None'	- Represents non-availability of value
+			
+	Breadcrumb
+	------------
+	
+		List.headOption #119
+		Value Extraction(Safe) Operation : Check table here...#120
+	
+
+Example : 'null' value example	
+-----------------------------------------------------------------------
+	#117				
+	scala> var x: String = "Indeed"			//Some value
+		x: String = Indeed
+		
+	scala> var a = Option(x)
+		a: Option[String] = Some(Indeed)..
+		
+	scala> x = null							//null value
+		x: String = null
+		
+	scala> var b = Option(x)
+		b: Option[String] = None
+		
+
+Example : Chain of operations example
+-----------------------------------------------------------------------
+	#119
+	//Valid
+	scala> val filtered = lowercase filter (_ endsWith "ible") map (_.toUpperCase)
+		filtered: Option[String] = Some(RISIBLE)
+		
+	//Invalid
+	scala> val exactSize = filtered filter (_.size > 15) map (_.size)
+		exactSize: Option[Int] = None

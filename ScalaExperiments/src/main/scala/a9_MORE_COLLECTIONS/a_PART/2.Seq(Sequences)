@@ -1,0 +1,14 @@
+
+	Seq
+		IndexedSeq
+			Vector	
+			Range
+		LinearSeq
+			Queue/Stack 
+			List
+				Nil
+			Stream 
+			String
+			& more...
+			
+	Check table here #114		

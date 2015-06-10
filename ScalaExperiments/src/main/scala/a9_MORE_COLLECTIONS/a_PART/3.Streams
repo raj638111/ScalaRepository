@@ -1,0 +1,40 @@
+Explanation
+-----------------------------------------------------------------------
+ 
+	# Is a 'lazy' collection  #115
+	# Elements are only added when they are accessed for the first time
+	# Elements are cached, so they are created only once
+	# Is a recursive data structure like List consisting of Head & Tail
+	#** Terminated by 'Stream.Empty'
+	#** Is created using 'Stream.cons' or '#:'
+	
+Example : Unbounded Stream Using explicit Type(Stream) 
+-----------------------------------------------------------------------
+	#115
+	
+	scala> def inc(i: Int): Stream[Int] = Stream.cons(i, inc(i+1)) //Explicit call 'Stream.cons'
+		inc: (i: Int)Stream[Int]
+		
+		**NOTE : Each recursive call creates a new Head
+		
+	scala> val s = inc(1)
+		s: Stream[Int] = Stream(1, ?)
+		
+	scala> val l = s.take(5).toList			//Here size of stream is decided by take()
+		l: List[Int] = List(1, 2, 3, 4, 5)
+		
+	scala> s
+	res1: Stream[Int] = Stream(1, 2, 3, 4, 5, ?)
+	
+Example : Unbounded Using explicit Type(Stream)
+-----------------------------------------------------------------------
+	#116
+	
+	scala> def to(head: Char, end: Char): Stream[Char] = (head > end) match {
+		case true => Stream.empty
+		case false => head #:: to((head+1).toChar, end)
+		}
+		to: (head: Char, end: Char)Stream[Char]
+		
+	scala> val hexChars = to('A', 'F').take(20).toList //Here size is not decided by take()
+		hexChars: List[Char] = List(A, B, C, D, E, F)

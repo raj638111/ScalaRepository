@@ -1,0 +1,54 @@
+INFO 
+------------------------------------------------------------------------
+
+	# Contains 2 groups of operations : Math Reduce Operation 	#94
+										Boolean Reduce Operation
+	# 'Boolean Reduction' can be made more readable with 'Infix Operator notation'									 
+	# Check table here for all Operations #94
+	
+	#**List-Folding Functions
+		These are 'higher order functions' that can be used to reduce a list #97
+		Example : 	fold(), reduce(), scan() etc...
+					Check table here...#97
+		Left/Right varieties support different Return types #97
+		**Always choose left/right over the common variety. 'left' is most recommened because
+		  of less traversal #98 
+	
+EXAMPLE : Usage
+------------------------------------------------------------------------
+										
+	scala> val valid1 = !(validations contains false)
+		valid1: Boolean = false
+		
+EXAMPLE : Customer Reduction Operation
+------------------------------------------------------------------------
+	#96
+	# Custom Type-Parameterized Reducer Function
+	scala> def reduceOp[A,B](l: List[A], start: B)(f: (B, A) => B): B = {
+		var a = start
+		for (i <- l) a = f(a, i)
+		a
+		}
+		reduceOp: [A, B](l: List[A], start: B)(f: (B, A) => B)B
+	
+	//Invocation using Literal Block
+	scala> val included = reduceOp(List(46, 19, 92), false) { (a, i) =>
+		if (a) a else (i == 19)
+		}
+		included: Boolean = true
+		 
+	//Invocation using Placeholder syntax
+	scala> val answer = reduceOp(List(11.3, 23.5, 7.2), 0.0)(_ + _)
+	
+
+EXAMPLE : Reduction using List-Folding function 
+------------------------------------------------------------------------
+	#98
+	scala> val included = List(46, 19, 92).foldLeft(false) { (a, i) =>
+		if (a) a else (i == 19)
+		}
+		included: Boolean = true
+		
+	scala> val answer = List(11.3, 23.5, 7.2).reduceLeft(_ + _)
+		answer: Double = 42.0
+	

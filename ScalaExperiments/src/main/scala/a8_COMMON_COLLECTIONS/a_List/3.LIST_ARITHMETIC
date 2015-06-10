@@ -1,0 +1,12 @@
+RECOMMENDATION FOR LIST ARITHMETIC
+------------------------------------------------------------------------
+
+	# Check table here for all arithmetic operations #90
+	# Use place holder syntax if possible with Higher order functions #91
+	#** Always try to use methods that operate at beginning(::, drop & take) of the list
+		Those methods that operates on end of list, creates new list & also do traversal
+		to the end of list #92
+	# ::, drop() & take() also has its corollary operations(+:, dropRight() & takeRight())
+		
+		
+	

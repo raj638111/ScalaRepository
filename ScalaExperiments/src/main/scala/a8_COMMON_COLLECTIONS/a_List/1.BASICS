@@ -2,6 +2,7 @@ ADDITIONAL INFO
 ------------------------------------------------------------------------
 	# List is Immutable
 	# A list ends with 'Nil' as terminus #88
+	# List, Set & Map are all sub-type of 'Iterable' #83
 	
 METHODS
 ------------------------------------------------------------------------

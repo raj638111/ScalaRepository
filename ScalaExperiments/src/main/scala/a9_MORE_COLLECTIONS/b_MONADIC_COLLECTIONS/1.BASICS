@@ -1,0 +1,8 @@
+Explanation
+-----------------------------------------------------------------------
+
+	# 	Is a Single Element Collection, that supports transformative operations 
+		like the one in 'Iterable' #117
+	
+	#**	Provides elegant solution for handling 'null' values & helps in 
+		chaining operations together 

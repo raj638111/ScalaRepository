@@ -1,0 +1,19 @@
+INFO
+------------------------------------------------------------------------
+
+	# Operartions are : collect(), flatMap() & map() #93
+	
+
+EXAMPLE
+------------------------------------------------------------------------
+
+	#93
+	scala> List(0, 1, 0) collect {case 1 => "ok"}
+		res0: List[String] = List(ok)
+		
+	scala> List("milk,tea") flatMap (_.split(','))
+		res1: List[String] = List(milk, tea)
+		
+	scala> List("milk","tea") map (_.toUpperCase)
+		res2: List[String] = List(MILK, TEA)
+
