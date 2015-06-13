@@ -1,0 +1,53 @@
+Syntax
+----------------------------------------------------------------
+
+	# 145
+	class <identifier> [type-parameters]
+	([val|var] <identifier>: <type> = <expression>[, ... ])
+	[extends <identifier>[type-parameters](<input parameters>)]
+	[{ fields and methods }]
+		
+Example : Initializing Super class from Sub Class	 
+----------------------------------------------------------------
+
+	#143		
+	scala> class Lotus(val color: String, reserved: Boolean) extends
+		Car("Lotus", reserved) //Sub class Initialization
+		defined class Lotus
+		
+
+Example : Class with Input Parameters, Default value & Named Parameter
+-------------------------------------------------------------------------
+
+	#144
+	
+	#Class with Input Parameter & Default value
+	
+		scala> class Car(val make: String, var reserved: Boolean = true,
+		val year: Int = 2015) {
+		override def toString = s"$year $make, reserved = $reserved"
+		}
+		defined class Car
+		
+	# Instantiating Class using Named Parameters
+	
+		scala> val l = new Car("Lexus", year = 2010)
+		l: Car = 2010 Lexus, reserved = true
+
+
+Example : Class with Type Parameters
+-------------------------------------------------------------------------
+
+	scala> class Singular[A](element: A) extends Traversable[A] { //145
+		def foreach[B](f: A => B) = f(element)
+		}
+		defined class Singular
+		
+	scala> val p = new Singular("Planes")
+		p: Singular[String] = (Planes)
+		
+	scala> p foreach println
+		Planes
+		
+	scala> val name: String = p.head
+		name: String = Planes

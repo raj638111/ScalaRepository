@@ -1,5 +1,4 @@
------------------------------------------------------
-TERMINOLOGY
+Explanation
 -----------------------------------------------------
 
 	# Is a function that does NOT return a value 	#48
@@ -9,8 +8,7 @@ TERMINOLOGY
 	  
 	# NOTE : Check old deprecated syntax 			#48
 	
------------------------------------------------------
-EXAMPLE
+Example
 -----------------------------------------------------
 
 	scala> def log(d: Double) = println(f"Got value $d%.2f")

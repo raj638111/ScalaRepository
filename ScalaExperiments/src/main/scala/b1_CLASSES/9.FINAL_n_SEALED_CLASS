@@ -1,0 +1,9 @@
+
+	'final'
+	 
+		Prevents the Subclassing of a Class #161
+		
+	'sealed'
+		
+		Allows subclassing only within the same file 
+		Example : 'Option' class is sealed 		#61

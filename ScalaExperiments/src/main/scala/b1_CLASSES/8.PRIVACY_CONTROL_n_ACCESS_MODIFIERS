@@ -1,0 +1,44 @@
+Privacy Control
+----------------------------------------
+
+	user 'private' & 'protected' #158
+	Check here for example...#158
+	
+Access Modifier( [] )
+----------------------------------------
+
+	Is specified by using Package, Class or 'this' inside Square Bracket #160
+	
+	Any calls outside the scope will make Privacy Control(private, protected)
+		active & any callsinside the scope will de-activate the Privacy Control 
+	
+	Example
+	---------
+	
+		package com.oreilly { 	//160
+		
+			private[oreilly] class Config { //*** Package level Access modifier
+			val url = "http://localhost"
+			}
+			class Authentication {
+			private[this] val password = "jason" //*** 	Only methods inside the 
+												 //		same instance can access
+			def validate = password.size > 0
+			}
+			class Test {
+			println(s"url = ${new Config().url}")
+			}
+		}
+		
+		scala> val valid = new com.oreilly.Authentication().validate
+			valid: Boolean = true
+			
+		scala> new com.oreilly.Test
+			url = http://localhost
+			res0: com.oreilly.Test = com.oreilly.Test@4c309d4d
+			
+		scala> new com.oreilly.Config
+			<console>:8: error: class Config in package oreilly cannot be
+			accessed in package com.oreilly
+			new com.oreilly.Config
+	

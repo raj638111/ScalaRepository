@@ -1,0 +1,56 @@
+Explanation
+-------------------------------------------
+
+	# Is a kind of Class that enables Multiple Inheritance  #176
+	# All classes, case classes, object & traits can extend multiple traits
+	# Can take Type Parameter
+	# Do not take Class Parameter
+
+	#* Note : When extending a Class & Traits, Class should be specified first #176
+		    : Always be aware of the linearization of Traits(Check example here...#178)
+Syntax
+-------------------------------------------
+
+	trait <identifier> [extends <identifier>] [{ fields, methods, and classes }]
+	
+Example
+-------------------------------------------
+	
+	#177. 	Check more examples are Linearization(#178) & Shared Parent 
+			class behavior overriding(179)
+	
+	scala> trait HtmlUtils {
+		def removeMarkup(input: String) = {
+			input.replaceAll("""</?\w[^>]*>""","").replaceAll("<.*>","")
+			}
+		}
+		defined trait HtmlUtils
+	
+	scala> trait SafeStringUtils {
+		// Returns a trimmed version of the string wrapped in an Option,
+		// or None if the trimmed string is empty.
+		def trimToNone(s: String): Option[String] = {
+				Option(s) map(_.trim) filterNot(_.isEmpty)
+			}
+		}
+		defined trait SafeStringUtils
+	
+	scala> class Page(val s: String) extends SafeStringUtils with HtmlUtils {
+		def asPlainText: String = {
+			trimToNone(s) map removeMarkup getOrElse "n/a"
+			}
+		}
+		defined class Page
+	
+	scala> new Page("<html><body><h1>Introduction</h1></body></html>").asPlainText
+		res3: String = Introduction
+	
+	scala> new Page(" ").asPlainText
+		res4: String = n/a
+	
+	scala> new Page(null).asPlainText
+		res5: String = n/a
+
+	
+
+

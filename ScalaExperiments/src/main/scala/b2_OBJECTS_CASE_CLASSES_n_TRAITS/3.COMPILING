@@ -1,0 +1,8 @@
+
+	Compile
+	
+		scalac Date.scala  #172
+		
+	Execute
+	
+		scala Date

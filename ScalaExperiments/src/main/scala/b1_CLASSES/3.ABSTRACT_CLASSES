@@ -1,0 +1,26 @@
+Example
+----------------------------------------------------------------
+
+	#147
+	scala> abstract class Car {
+		val year: Int					//**Only declared. Undefined value
+		val automatic: Boolean = true
+		def color: String				//**Only Declared. Unimplemented Method
+		}
+		defined class Car
+	
+	//**Value 'year' is not defined
+	
+		scala> class Mini(val color: String) extends Car   
+		 <console>:8: error: class Mini needs to be abstract, since value year
+		 in class Car of type Int is not defined
+	     class Mini(val color: String) extends Car
+	
+	//** NOTE : Note here we are Implemented the 'color' method as 'val'
+	
+		scala> class Mini(val year: Int, val color: String) extends Car	
+		defined class Mini
+	
+	scala> val redMini: Car = new Mini(2005, "Red")
+		redMini: Car = Mini@1f4dd016
+

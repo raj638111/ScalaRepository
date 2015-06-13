@@ -1,0 +1,43 @@
+Example : A Basic Class
+(Class with Member 'name') : 2 ways #138, #141
+----------------------------------------------------------------
+
+	#**Here 'n' is a 'Class Parameter' (Not there is no 'var' or 'val')
+	** Class Parameters are only available to initialize fields(var / val) or
+	   passing to functions. Once the class is created, the parameters
+	   are not available #139
+	   	
+		scala> class User(n: String) {
+		val name: String = n
+		def greet: String = s"Hello from $name"
+		override def toString = s"User($name)"
+		}
+		defined class User
+
+	#** Here 'name' is a 'Class Parameter' albeit also a Member variable
+	#** aka 'Parameterized Value' #138
+	
+		scala> class User(val name: String) {
+		def greet: String = s"Hello from $name"
+		override def toString = s"User($name)" //*** Note 'override' 
+		}
+		defined class User
+			
+Example : Inheritance & Polymorphism 
+----------------------------------------------------------------
+	#140
+	scala> class A {
+		def hi = "Hello from A"
+		override def toString = getClass.getName
+		}
+		defined class A
+		
+	scala> class B extends A
+		defined class B
+		
+	scala> class C extends B { override def hi = "hi C -> " + super.hi }
+		defined class C
+	
+	#141	
+	scala> val misc = List(new C, new A, new B)
+		misc: List[A] = List(C, A, B)	

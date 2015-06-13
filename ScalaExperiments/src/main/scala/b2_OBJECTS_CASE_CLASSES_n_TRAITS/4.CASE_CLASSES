@@ -1,0 +1,39 @@
+Explanation
+----------------------------------------
+
+	# 	Is an automated way to generate Companion Object for a Class and
+		methods #173
+		
+	# 	Check table here for methods('apply', 'unapply' & more...) #174
+
+	# 	**Is recommended to create data storage classes #175
+	
+Syntax
+----------------------------------------
+
+	#174
+	case class <identifier> ([var] <identifier>: <type>[, ... ])
+		[extends <identifier>(<input parameters>)]
+		[{ fields and methods }]
+
+
+Example
+----------------------------------------
+
+	scala> case class Character(name: String, isThief: Boolean)
+		defined class Character
+		
+	scala> val h = Character("Hadrian", true)
+		h: Character = Character(Hadrian,true)
+		
+	scala> val r = h.copy(name = "Royce")
+		r: Character = Character(Royce,true)
+		
+	scala> h == r
+		res0: Boolean = false
+		
+	scala> h match {  	//** 	Note here 'unapply' method is applied 
+						//		to get the field as Tuples #174 
+		case Character(x, true) => s"$x is a thief"
+		case Character(x, false) => s"$x is not a thief"
+		}	

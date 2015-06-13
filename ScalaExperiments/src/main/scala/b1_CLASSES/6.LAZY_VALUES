@@ -1,0 +1,29 @@
+Explanation
+----------------------------------------------------------------
+
+	# 	A 'field' which is a lazy value is initialized only when it is first
+	 	accessed
+
+Example
+----------------------------------------------------------------
+
+	#151
+	
+	scala> class RandomPoint {
+		val x = { println("creating x"); util.Random.nextInt }
+		lazy val y = { println("now y"); util.Random.nextInt }
+		}
+		defined class RandomPoint
+		
+	scala> val p = new RandomPoint()
+		creating x
+		p: RandomPoint = RandomPoint@6c225adb
+
+	#** Lazy value is only initialized during accessing the field(first time)		
+		scala> println(s"Location is ${p.x}, ${p.y}")
+		now y
+		Location is 2019268581, -806862774
+		
+	scala> println(s"Location is ${p.x}, ${p.y}")
+		Location is 2019268581, -806862774
+	 	

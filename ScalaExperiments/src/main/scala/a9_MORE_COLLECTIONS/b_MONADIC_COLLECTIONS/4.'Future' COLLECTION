@@ -7,10 +7,12 @@ Explanation
 	# 	Asynchronous Operations in 'Future'
 		- onSuccess() #128
 		- onFailure() #128
-		- Check the table for all Asynchronous Operations #127	
+		- Check the table here for more #127	
+		
 	
 	# 	Synchronous handling in 'Future'
 		- Use 'concurrent.Await.result' #129
+		- Check Example here...#130
 
 Example (Basic)
 -----------------------------------------------------------------------
@@ -26,3 +28,29 @@ Example (Basic)
 		waiting
 		
 	scala> hi
+	
+
+Example (Asynchronous Operations in 'Future') #128
+-----------------------------------------------------------------------
+	
+	scala> def cityTemp(name: String): Double = {
+		val url = "http://api.openweathermap.org/data/2.5/weather"
+		val cityUrl = s"$url?q=$name"
+		val json = io.Source.fromURL(cityUrl).mkString.trim
+		val pattern = """.*"temp":([\d.]+).*""".r
+		val pattern(temp) = json
+		temp.toDouble
+		}
+		cityTemp: (name: String)Double
+		
+	scala> val cityTemps = Future sequence Seq( //Multiple Threads run here
+		Future(cityTemp("Fresno")), Future(cityTemp("Tempe"))
+		)
+		cityTemps: scala.concurrent.Future[Seq[Double]] =
+		scala.concurrent.impl.Promise$DefaultPromise@51e0301d
+		
+	scala> cityTemps onSuccess {
+		case Seq(x,y) if x > y => println(s"Fresno is warmer: $x K")
+		case Seq(x,y) if y > x => println(s"Tempe is warmer: $y K")
+		}
+		Tempe is warmer: 306.1 K

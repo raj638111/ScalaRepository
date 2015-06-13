@@ -1,0 +1,33 @@
+Explanation
+----------------------------------------
+	
+	# Are created using 'object' keyword'
+	# Are a Singleton & is created during its first access #167
+	# **Pure functions & I/O related function are best suited for object #168
+	# Do not take class Parameters
+	
+Syntax
+----------------------------------------
+
+	object <identifier> [extends <identifier>] [{ fields, methods, and classes }]  #168
+	
+Example
+----------------------------------------
+
+	#168
+	
+	scala> object HtmlUtils {		//**** This is also a good example for 'Regex'
+		def removeMarkup(input: String) = {
+				input.replaceAll("""</?\w[^>]*>""","")
+				.replaceAll("<.*>","")
+			}
+		}
+		defined object HtmlUtils
+		
+	scala> val html = "<html><body><h1>Introduction</h1></body></html>"
+		html: String = <html><body><h1>Introduction</h1></body></html>
+		
+	scala> val text = HtmlUtils.removeMarkup(html)
+		text: String = Introduction
+ 
+ 

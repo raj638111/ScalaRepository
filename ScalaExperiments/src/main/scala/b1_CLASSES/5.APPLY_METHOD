@@ -1,0 +1,27 @@
+Explanation
+----------------------------------------------------------------
+
+	# Also called 'injector' or 'default' method #150
+	# Can be invoked without method name
+	
+	# List actually use the 'apply' method #150
+	
+Example
+----------------------------------------------------------------
+
+	scala> class Multiplier(factor: Int) {
+		def apply(input: Int) = input * factor
+		}
+		defined class Multiplier
+
+	scala> val tripleMe = new Multiplier(3)
+		tripleMe: Multiplier = Multiplier@339cde4b
+
+	# Explicit Method Call
+		scala> val tripled = tripleMe.apply(10)
+		tripled: Int = 30
+		
+	#** 'apply' method called without its name
+		scala> val tripled2 = tripleMe(10)
+		tripled2: Int = 30
+	

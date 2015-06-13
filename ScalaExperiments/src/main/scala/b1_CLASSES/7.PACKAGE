@@ -1,0 +1,55 @@
+Explanation
+-----------------------------------------------------
+
+	# Package Can be specified in top of the file (or) #151
+	# Through Packaging Syntax (#156)
+	
+Syntax : Creating a Package
+-----------------------------------------------------
+	
+	package <identifier> #152
+	
+Syntax : Importing a Package
+-----------------------------------------------------
+
+	import <package>.<class> #153
+	Note : Import can be place anywhere in Scala
+		 : Import is a statement in Scala
+	
+	Automatic imports : Scala does automatic import of scala._ & java.lang._
+	
+	Example
+	----------
+		scala> import java.util  //154
+		import java.util
+		
+		scala> val d = new util.Date
+		d: java.util.Date = Wed Jan 2229 06:18:52 PDT 2014
+		
+Syntax : Import Group 
+-----------------------------------------------------
+	
+	# 	Can be used to avoid importing all Classes with ._ there by avoid 
+		Class name overriding behavior(Example 'Map' is available 
+		as mutable & immutable) #155
+		  	
+	Syntax : import <package>.{<class 1>[, <class 2>...]} #155
+	
+	Example : import collection.mutable.{Queue,ArrayBuffer}
+	
+	
+Syntax : Import Alias
+-----------------------------------------------------
+
+	# Is another way to avoid Class name overriding behavior #156
+	
+	Syntax : import <package>.{<original name>=><alias>}
+	
+	Example : scala> import collection.mutable.{Map=>MutMap}
+	
+Syntax : Package Syntax 
+----------------------------
+	# Is useful when testing in REPL
+	# Not widely used. Read more here...#156
+
+	

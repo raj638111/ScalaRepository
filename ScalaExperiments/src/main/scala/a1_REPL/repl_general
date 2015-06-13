@@ -4,5 +4,13 @@ Load Scala Code from File in REPL
 Paste a code in REPL
 	:paste	#7
 	:past -raw  #7 : Works only with Scala Class or Equivalent
+	
+Reset the REPL 
+	This will allow us to clear all package imports we have made earlier #154
+	Command : ':reset'
+	
+Packaging Syntax
+	Is use to provide namespace to Classes
+	Is useful while testing in REPL #156	
 
 	
