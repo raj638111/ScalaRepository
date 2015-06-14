@@ -1,0 +1,38 @@
+Explanation
+-------------------------------------------
+
+	# 	Traits can also be added to the Class when the Class is instantiated #182
+		This creates an instance class that is anonymous #183
+		
+	#	Traits are a way to add additional character to a class without changing the 
+	 	definition of the class. This is called as **'Dependency Injection' #183
+	 	
+	#	'extend' keyword cannot be used here. only 'with' keyword can be used #182
+	 	A good note here, in last paragraph(Adding traits...) #184	
+
+Example
+-------------------------------------------
+	 		
+	scala> class User(val name: String) {
+			def suffix = ""
+			override def toString = s"$name$suffix"
+		}
+		defined class User
+		
+	scala> trait Attorney { self: User => override def suffix = ", esq." }
+		defined trait Attorney
+		
+	scala> trait Wizard { self: User => override def suffix = ", Wizard" }
+		defined trait Wizard
+		
+	scala> trait Reverser { override def toString = super.toString.reverse }
+		defined trait Reverser
+		
+	scala> val h = new User("Harry P") with Wizard
+		h: User with Wizard = Harry P, Wizard
+		
+	scala> val g = new User("Ginny W") with Attorney
+		g: User with Attorney = Ginny W, esq.
+		
+	scala> val l = new User("Luna L") with Wizard with Reverser
+		l: User with Wizard with Reverser = draziW ,L anuL

@@ -1,0 +1,40 @@
+Explanation
+-------------------------------------------
+
+	# 	Is a way to guarantee that Trait will only extend a particular type(Class)  #180
+		# The Trait in this case becomes a sub type of that Type(Class)
+		 
+	# 	Provides way to extend a Class without Specifying(Hard coding) 
+		its Input Parameter #182
+		
+Syntax
+-------------------------------------------
+
+	trait ..... { <identifier>: <type> => .... }  #180
+	
+	
+Example
+-------------------------------------------
+
+	#181
+	scala> class A { def hi = "hi" }
+		defined class A
+		
+	scala> trait B { self: A =>
+			override def toString = "B: " + hi
+		}
+		defined trait B
+		
+	scala> class C extends B
+		<console>:9: error: illegal inheritance;
+		180 | Chapter 9: Objects, Case Classes, and Traits
+		self-type C does not conform to B's selftype B with A
+		class C extends B
+		^
+	
+	scala> class C extends A with B
+		defined class C
+		
+	scala> new C()
+		res1: C = B: hi	
+		

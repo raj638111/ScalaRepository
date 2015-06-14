@@ -16,7 +16,7 @@ Syntax
 Example
 -------------------------------------------
 	
-	#177. 	Check more examples are Linearization(#178) & Shared Parent 
+	#177. 	Check more examples on Linearization(#178) & Shared Parent 
 			class behavior overriding(179)
 	
 	scala> trait HtmlUtils {

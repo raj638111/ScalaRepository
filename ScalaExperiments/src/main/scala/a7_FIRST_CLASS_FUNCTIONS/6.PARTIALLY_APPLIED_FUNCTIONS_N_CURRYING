@@ -1,4 +1,3 @@
------------------------------------------------------
 Explanation
 -----------------------------------------------------
 	
@@ -9,7 +8,6 @@ Explanation
 		**Is a way to create Partially Applied function using Function with
 		multiple Parameter list #74 
 
------------------------------------------------------
 Example : Shortcut to a function 
 -----------------------------------------------------
 	#74
@@ -22,7 +20,6 @@ Example : Shortcut to a function
 	scala> val x = f(7, 20)
 	x: Boolean = false
 
------------------------------------------------------
 Example : Partially Applied Function
 -----------------------------------------------------
 
@@ -32,7 +29,6 @@ Example : Partially Applied Function
 	scala> val y = multipleOf3(78)
 	y: Boolean = true
 
------------------------------------------------------
 Example : Partially Applied Function using Currying
 -----------------------------------------------------
 
@@ -42,5 +38,5 @@ Example : Partially Applied Function using Currying
 	scala> val isEven = factorOf(2) _		# Partially Applied function using Currying
 	isEven: Int => Boolean = <function1>
 	
-	scala> val z = isEven(32
+	scala> val z = isEven(32)
 	

@@ -1,0 +1,57 @@
+Tuples (The Inner working) 
+-----------------------------------------------------
+
+	# Are instances of TupleX[Y] #201
+		Example : Tupe2[A,B] has 2 fields _1 & _2
+		
+	# TupleX[Y] extends ProductX trait which provides operations like 'productArity'
+	
+	Example 
+	---------
+		scala> val x: (Int, Int) = Tuple2(10, 20)
+			x: (Int, Int) = (10,20)
+			
+		scala> println("Does the arity = 2? " + (x.productArity == 2))
+			Does the arity = 2? true
+			
+
+Function Literals (The Inner working) 		
+-----------------------------------------------------
+
+	# Are implemented as instance of FunctionX[Y] trait #202
+	# Actual logic is implemented in 'apply' method
+			
+	Example
+	-------------
+		scala> val hello1 = (n: String) => s"Hello, $n" //This is how we do everyday
+			hello1: String => String = <function1>
+		
+		scala> val h1 = hello1("Function Literals")
+			h1: String = Hello, Function Literals
+		
+		scala> val hello2 = new Function1[String,String] { //This is how we can do explicitly
+			def apply(n: String) = s"Hello, $n"
+			}
+			hello2: String => String = <function1>
+		
+		scala> val h2 = hello2("Function1 Instances")
+			h2: String = Hello, Function1 Instances
+		
+		scala> println(s"hello1 = $hello1, hello2 = $hello2")
+			hello1 = <function1>, hello2 = <function1>
+			
+	***Function1 instances can be combined(Chained) 
+	------------------------------------------------
+	
+		scala> val doubler = (i: Int) => i*2	//202
+			doubler: Int => Int = <function1>
+		
+		scala> val plus3 = (i: Int) => i+3
+			plus3: Int => Int = <function1>
+		
+		scala> val prepend = (doubler compose plus3)(1)
+			prepend: Int = 8
+		
+		scala> val append = (doubler andThen plus3)(1)
+			append: Int = 5
+

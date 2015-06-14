@@ -1,0 +1,19 @@
+Explanation
+-------------------------------------------
+
+	class & object members can also be imported 	#184
+	Beware : Importing members from multiple classes can create name conflict #184
+	
+Example
+-------------------------------------------
+
+	scala> case class Receipt(id: Int, amount: Double, who: String, title: String)
+		defined class Receipt
+		
+	scala> {
+		val latteReceipt = Receipt(123, 4.12, "fred", "Medium Latte")
+		import latteReceipt._
+		println(s"Sold a $title for $amount to $who")
+		}
+		Sold a Medium Latte for 4.12 to fred
+		

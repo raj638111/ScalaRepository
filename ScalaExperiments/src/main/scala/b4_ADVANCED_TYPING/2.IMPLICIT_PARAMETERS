@@ -1,0 +1,36 @@
+Explanation
+-----------------------------------------------------
+	
+	# Is another alternative to Partially Applied functions 
+	# A Caller can provide default value in its own namespace #203
+	# Done using 'implicit' keyword
+	# ** Beware : Using too much can make the code difficult to read #204
+
+Example (Way 1)
+-----------------------------------------------------
+	scala> object Doubly {
+		def print(num: Double)(implicit fmt: String) = {
+		println(fmt format num)
+		}
+		}
+		defined object Doubly
+		
+	scala> Doubly.print(3.724)
+		<console>:9: error: could not find implicit value for parameter fmt: String
+		Doubly.print(3.724)
+		
+	scala> Doubly.print(3.724)("%.1f")  //Implicit parameter passed explicitly
+		3.7
+	
+Example (Way 2 : Passing implicit parameter as local value)
+------------------------------------------------------------
+
+	scala> case class USD(amount: Double) {	//204
+		implicit val printFmt = "%.2f"  //** Implicit parameter passed as local value
+		def print = Doubly.print(amount)
+		}
+		defined class USD
+		
+	scala> new USD(81.924).print
+		81.92
+	
