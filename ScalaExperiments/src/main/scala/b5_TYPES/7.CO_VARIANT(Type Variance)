@@ -1,0 +1,36 @@
+Explanation
+-------------------------------------------
+
+	# 	'Type variance' : Is the process of providing lineancy in type vis-a-vis 
+		'bound types' that restrict the type 	#212
+		
+	#	Co-variant 
+		# 	Is a way to bring polymorphism to Type 
+			Parameters(as it is not available by default)
+			
+			*Type parameter by default are In-variant 	#213
+			
+		# Is enabled by using (+)
+		
+	
+Example
+-------------------------------------------
+	
+	#215, #216
+	scala> class Car; class Volvo extends Car; class VolvoWagon extends Volvo
+	
+	scala> class Item[+A](a: A) { def get: A = a }
+		defined class Item
+
+	scala> def item(v: Item[Volvo]) { val c: Car = v.get }
+		item: (v: Item[Volvo])Unit
+	
+	scala> item( new Item[Car](new Car()) )
+		<console>:14: error: type mismatch;
+		found : Item[Car]
+		required: Item[Volvo]
+		item( new Item[Car](new Car()) )
+		^
+	scala> item( new Item[Volvo](new Volvo) )
+	
+	scala> item( new Item[VolvoWagon](new VolvoWagon()) )

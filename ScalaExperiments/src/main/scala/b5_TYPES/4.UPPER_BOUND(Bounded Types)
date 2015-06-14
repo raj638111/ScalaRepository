@@ -1,0 +1,38 @@
+Explanation
+-------------------------------------------
+
+	# Is used to restrict the type 	#209 
+	# Upper bound (<:) : Restricts the type to them self or its sub class
+	# 
+
+Syntax
+-------------------------------------------
+
+	<identifier> <: <upper bound type>  //210
+	
+Example
+-------------------------------------------
+
+	#210
+	scala> class BaseUser(val name: String)
+		defined class BaseUser
+		
+	scala> class Admin(name: String, val level: String) extends BaseUser(name)
+		defined class Admin
+		
+	scala> class Customer(name: String) extends BaseUser(name)
+		defined class Customer
+		
+	scala> class PreferredCustomer(name: String) extends Customer(name)
+		defined class PreferredCustomer
+
+	----------------------
+	
+	scala> def check[A <: BaseUser](u: A) { if (u.name.isEmpty) println("Fail!") }
+		check: [A <: BaseUser](u: A)Unit
+		
+	scala> check(new Customer("Fred"))
+	
+	scala> check(new Admin("", "strict"))
+		Fail!
+		

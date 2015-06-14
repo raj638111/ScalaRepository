@@ -1,0 +1,32 @@
+Explanation
+-------------------------------------------
+
+	# 	A co-variant cannot be used as input parameter as it is a 
+		contra-variant position #214
+	# 	A contra variance is a position where a type parameter may morph into sub-type #214	
+	# 	A contro-variant type parameter can be marked with (-) sign
+	
+Example
+-------------------------------------------
+
+	#215, #216
+	
+	scala> class Car; class Volvo extends Car; class VolvoWagon extends Volvo
+	
+	scala> class Check[-A] { def check(a: A) = {} }
+		defined class Check
+
+	scala> def check(v: Check[Volvo]) { v.check(new VolvoWagon()) }
+		check: (v: Check[Volvo])Unit
+
+
+	scala> check( new Check[Car]() )
+	
+	scala> check( new Check[Volvo]() )
+	
+	scala> check( new Check[VolvoWagon]() )
+		<console>:14: error: type mismatch;
+		found : Check[VolvoWagon]
+		required: Check[Volvo]
+		check( new Check[VolvoWagon]() )
+	

@@ -1,0 +1,5 @@
+
+	# Class & Trait conforms to single definition #207
+	# Type may match a single class or range of classes(Ex : Option, Option[A]
+	
+	# Objects are not considered Types 

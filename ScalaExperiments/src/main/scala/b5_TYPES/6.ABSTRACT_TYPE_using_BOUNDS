@@ -1,0 +1,25 @@
+
+Bounded types can be used with Abstract types #211
+
+	scala> abstract class Card {
+		type UserType <: BaseUser		//Abstract type using upper bound
+		def verify(u: UserType): Boolean
+		}
+		defined class Card
+		
+	scala> class SecurityCard extends Card {
+		type UserType = Admin
+		def verify(u: Admin) = true
+		}
+		defined class SecurityCard
+		
+	scala> val v1 = new SecurityCard().verify(new Admin("George", "high"))
+		v1: Boolean = true
+		scala> class GiftCard extends Card {
+		type UserType = Customer
+		def verify(u: Customer) = true
+		}
+		defined class GiftCard
+		
+	scala> val v2 = new GiftCard().verify(new Customer("Fred"))
+	v2: Boolean = true

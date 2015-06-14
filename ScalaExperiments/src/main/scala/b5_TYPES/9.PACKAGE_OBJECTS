@@ -1,0 +1,19 @@
+Explanation
+-----------------------------------------------------
+
+	# **Removes the need for manual import. more usage scenario on last paragraph in #217
+	# Is a unique object for each package that gets automatically imported to namespace #216
+	# Is defined in the file 'package.scala' in the package it is affecting 
+	
+Example
+-----------------------------------------------------
+
+	// located on com/oreilly/package.scala
+	
+	package object oreilly {
+	type Mappy[A,B] = collection.mutable.HashMap[A,B]
+	}
+	
+	Any class, trait, or object defined in this package will pick up 
+	the Mappy[A,B] type alias and be able to use it directly.
+	

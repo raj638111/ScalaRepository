@@ -1,0 +1,43 @@
+Explanation
+-------------------------------------------
+
+	# Is used to restrict the type 	#209 
+	# Lower bound (>:) : Restricts the type to them self or one of its base type 
+
+Syntax
+-------------------------------------------
+
+	<identifier> >: <lower bound type>	#210
+
+Example
+-------------------------------------------	
+	
+	#210
+	scala> class BaseUser(val name: String)
+		defined class BaseUser
+		
+	scala> class Admin(name: String, val level: String) extends BaseUser(name)
+		defined class Admin
+		
+	scala> class Customer(name: String) extends BaseUser(name)
+		defined class Customer
+		
+	scala> class PreferredCustomer(name: String) extends Customer(name)
+		defined class PreferredCustomer
+
+	----------------------
+	
+	scala> def recruit[A >: Customer](u: Customer): A = u match {  //211
+		case p: PreferredCustomer => new PreferredCustomer(u.name)
+		case c: Customer => new Customer(u.name)
+		}
+		recruit: [A >: Customer](u: Customer)A
+		
+	scala> val customer = recruit(new Customer("Fred"))
+		customer: Customer = Customer@4746fb8c
+		
+	#*** : NOTE : 	Although we have passed PreferredCustomer as parameter
+		 			the type of val 'preferred' will still be restricted to 'Customer'
+		 				
+		scala> val preferred = recruit(new PreferredCustomer("George"))
+		preferred: Customer = PreferredCustomer@4cd8db31			

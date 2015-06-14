@@ -2,4 +2,30 @@ Explanation
 -----------------------------------------------------
 
 	# Is a type of class that provides automatic conversion from another class #205
+	# Done using 'implicit' keyword 
+	# 2 Sized Tuple is one example of implicit conversion #206
+	# Read more on implicit class restrictions here...#206
+		# Can be defined only inside objects & more...
+	
+Example (Int converted to Fishies) 
+-----------------------------------------------------
+
+	# 205
+	
+	scala> object IntUtils {			
+		implicit class Fishies(val x: Int) { 
+		def fishes = "Fish" * x
+		}
+		}
+		defined object IntUtils
+		
+	scala> import IntUtils._
+		import IntUtils._
+		
+	scala> println(3.fishes)
+		FishFishFish
+
+	
+
+	
 	

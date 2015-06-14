@@ -1,0 +1,40 @@
+Explanation
+----------------------------------------------------------------
+
+	# ***Are specifications that can resolve to zero, one or many classes #208
+		# Note : Type Alias resolves to a single class
+		
+	# Used widely with type parameters to specify range of acceptable types
+	 
+	# Cannot be used to create instances
+	
+	# Note : 	Types can be restricted using Bounds & is the recommended way to develop
+				Abstract types #209, #211
+	
+Example : Type Declaration using Abstract Type
+----------------------------------------------------------------
+	#209
+	scala> class User(val name: String)
+		defined class User
+		
+	scala> trait Factory { type A	// Abstract Type used to create Type declaration for 
+									// trait 'Factory'
+		def create: A }
+		defined trait Factory
+		
+	scala> trait UserFactory extends Factory {
+		type A = User
+		def create = new User("")
+		}
+		defined trait UserFactory
+		
+Example : Same example implemented using type parameters 
+----------------------------------------------------------------
+
+	#209
+	
+	scala> trait Factory[A] { def create: A }
+		defined trait Factory
+		
+	scala> trait UserFactory extends Factory[User] { def create = new User("") }
+		defined trait UserFactory		
