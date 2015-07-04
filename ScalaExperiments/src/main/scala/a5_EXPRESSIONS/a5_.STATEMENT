@@ -1,0 +1,17 @@
+
+-------------------------
+Terminology
+------------
+    #** Is an Expression that DO NOT return value #29
+        +   Example : println()
+        
+    #** Have RETURN type of 'Unit'
+    
+    #** Value & Variable DEFINITIONS are Statement #29
+
+
+-------------------------
+Example
+------------
+# 	scala> val x = 1 #29 
+	x: Int = 1

@@ -2,10 +2,13 @@
 TERMINOLOGY
 -----------------------------------------------------
 
-	# Stack can be optimized with 'tail-recursion' #50
-	# Use function annotation to force the compiler for 'tail-recursion' check
-		# Annotation = @annotation.tailrec
-	#** Is Widely used to avoid Mutable Data	
+	#  Stack can be optimized with 'tail-recursion'(to avoid 
+	   stack overflow error #50
+	   
+	#  Use function annotation to force the compiler for 'tail-recursion' check
+		+     Annotation = @annotation.tailrec
+		
+	#  **Is Widely used to avoid Mutable Data	
 
 -----------------------------------------------------
 EXAMPLE
